@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "polzovatels",
+  "info": {
+    "singularName": "polzovatel",
+    "pluralName": "polzovatels",
+    "displayName": "Пользователь"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "user"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "index_gallerys",
+  "info": {
+    "singularName": "index-gallery",
+    "pluralName": "index-gallerys",
+    "displayName": "Главная галерея",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "gallery"
+    },
+    "Name": {
+      "type": "string"
+    }
+  }
+}
