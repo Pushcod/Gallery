@@ -4,7 +4,8 @@
   "info": {
     "singularName": "painting",
     "pluralName": "paintings",
-    "displayName": "Картина"
+    "displayName": "Картина",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -27,16 +28,21 @@
       "mappedBy": "painting"
     },
     "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "avtor": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::author.author"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Name"
     }
   }
 }
