@@ -876,6 +876,7 @@ export interface ApiPaintingPainting extends Schema.CollectionType {
     singularName: 'painting';
     pluralName: 'paintings';
     displayName: '\u041A\u0430\u0440\u0442\u0438\u043D\u0430';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -895,6 +896,7 @@ export interface ApiPaintingPainting extends Schema.CollectionType {
       'oneToOne',
       'api::author.author'
     >;
+    slug: Attribute.UID<'api::painting.painting', 'Name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

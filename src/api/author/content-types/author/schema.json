@@ -33,6 +33,9 @@
       "type": "media",
       "multiple": false,
       "required": false,
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
