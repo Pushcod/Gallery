@@ -808,6 +808,13 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       'api::index-gallery.index-gallery'
     >;
     paint: Attribute.Media;
+    Name: Attribute.String;
+    author: Attribute.UID<'api::author.author', 'Name'>;
+    reviews: Attribute.Relation<
+      'api::author.author',
+      'oneToMany',
+      'api::review.review'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -964,6 +971,11 @@ export interface ApiReviewReview extends Schema.CollectionType {
       'api::review.review',
       'manyToOne',
       'api::painting.painting'
+    >;
+    author: Attribute.Relation<
+      'api::review.review',
+      'manyToOne',
+      'api::author.author'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

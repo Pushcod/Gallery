@@ -28,6 +28,12 @@
       "relation": "manyToOne",
       "target": "api::painting.painting",
       "inversedBy": "reviews"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "reviews"
     }
   }
 }
