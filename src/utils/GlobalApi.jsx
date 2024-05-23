@@ -18,7 +18,7 @@ const getAuthor = () => axiosClient.get('/authors?populate=*');
 
 const getGallery = () => axiosClient.get('/index-gallerys?populate=*');
 
-const getSingleAuthor = (id) => axiosClient.get('/authors/' + id + '?populate=*');
+const getSingleAuthor = (id) => axiosClient.get('/authors?filters[author][$eqi]=' + id + '&populate=*');
 
 export default{
     getAuthor,

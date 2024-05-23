@@ -12,8 +12,8 @@ const useSingleAuthor = (id) => {
 
   const getSingleAuthor = () => {
     GlobalApi.getSingleAuthor(id).then(resp => {
-        console.log(resp.data.data);
-        setDetailAuthor(resp.data.data);
+
+        setDetailAuthor(resp.data.data[0]);
     });
   }
 
