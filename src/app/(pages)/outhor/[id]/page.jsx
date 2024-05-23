@@ -54,15 +54,15 @@ export default function page ({params})  {
                                 </div>
                                 <div className="w-full flex flex-col justify-end gap-3">
                                     
-                                    <span className="w-full text-zinc-700">Дата</span>
-                                </div>
-                            </li>
+    //                                 <span className="w-full text-zinc-700">Дата</span>
+    //                             </div>
+    //                         </li>
                             
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+    //                     </ul>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </section>
+    // )
 }
 

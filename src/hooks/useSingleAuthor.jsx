@@ -7,7 +7,7 @@ const useSingleAuthor = (id) => {
     const [detailAuthor, setDetailAuthor]= useState();
 
     useEffect(()=> {
-        getSingleAuthor();
+      getSingleAuthor();
     },[id])
 
   const getSingleAuthor = () => {

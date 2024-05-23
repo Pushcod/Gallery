@@ -18,7 +18,7 @@ const Author = () => {
                     {authorsList.map((item, index) => {
                         return (
                             <article key={index} className="w-[540px] h-[789px] bg-black p-[24px] flex flex-col gap-7">
-                                <Image src={process.env.NEXT_PUBLIC_STRAPI_API_URL +item.attributes?.Image?.data.attributes?.url} className='w-[492px] h-[287px] rounded-xl object-cover' width={492} height={287}/>
+                                <Image src={process.env.NEXT_PUBLIC_STRAPI_API_URL +item.attributes?.Image?.data.attributes?.url ?? ''} className='w-[492px] h-[287px] rounded-xl object-cover' width={492} height={287}/>
                                 <div className="w-full flex gap-7 items-center justify-between">
                                     <h3 className='text-[40px] text-white'>{item.attributes?.Name}</h3>
                                     <Link href={'/outhor/' + item.attributes?.author}>
