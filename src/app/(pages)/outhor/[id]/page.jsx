@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import React, { useEffect } from 'react'
 import useSingleAuthor from '@/hooks/useSingleAuthor'
+import Review from '@/components/Reviews/Reviews'
 
 export default function page ({params})  {
 
@@ -40,29 +41,12 @@ export default function page ({params})  {
                         :
                                 <div className='w-full h-full bg-zinc-800 animate-pulse'></div>
                     } 
-                        </div>
-                    <div className="w-full overflow-auto h-[300px] ">
-                        <ul className="w-full flex flex-col gap-6 ">
-                            <li className="w-full h-[261px] bg-black rounded-[20px] p-6 overflow-hidden flex items-center">
-                                <div className="w-full flex items-center gap-7">
-                                    <Image src={''} className='w-[137px] h-[137px] ' width={137} height={137}/>
-                                    {detailAuthor?.attributes?.reviews?.data?.attributes?.Review ?
-                                    <p className="w-[1000px] break-words h-full">{detailAuthor?.attributes?.reviews?.data?.attributes?.Review }</p>
-                                    :
-                        <div className='w-full h-full bg-zinc-800 animate-pulse'></div>
-                    }
-                                </div>
-                                <div className="w-full flex flex-col justify-end gap-3">
-                                    
-    //                                 <span className="w-full text-zinc-700">Дата</span>
-    //                             </div>
-    //                         </li>
-                            
-    //                     </ul>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </section>
-    // )
+                    </div>
+                    
+                    <Review/>
+                </div>
+            </div>
+        </section>
+     )
 }
 
