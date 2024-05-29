@@ -4,7 +4,8 @@
   "info": {
     "singularName": "review",
     "pluralName": "reviews",
-    "displayName": "Отзыв"
+    "displayName": "Отзыв",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,6 +35,9 @@
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "reviews"
+    },
+    "date": {
+      "type": "date"
     }
   }
 }

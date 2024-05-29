@@ -957,6 +957,7 @@ export interface ApiReviewReview extends Schema.CollectionType {
     singularName: 'review';
     pluralName: 'reviews';
     displayName: '\u041E\u0442\u0437\u044B\u0432';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -979,6 +980,7 @@ export interface ApiReviewReview extends Schema.CollectionType {
       'manyToOne',
       'api::author.author'
     >;
+    date: Attribute.Date;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
