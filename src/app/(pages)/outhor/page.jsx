@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import useAuthor from '@/hooks/useAuthor';
+import Authors from '@/components/Author/Author';
 
 const Author = () => {
 
@@ -11,10 +12,9 @@ const Author = () => {
     return (
         <section className='w-full py-10'>
             <div className="container mx-auto">
-                <div className="w-full mb-[50px] ">
-                    <h2 className="w-full text-[90px] text-white flex justify-center">Author</h2>
-                </div>
-                <div className="w-full grid grid-cols-3 gap-52">
+                {/* s */}
+                <Authors/>
+                {/* <div className="w-full grid grid-cols-3 gap-52">
                     {authorsList.map((item, index) => {
                         return (
                             <article key={index} className="w-[440px] h-[789px] bg-black p-[24px] flex flex-col gap-7">
@@ -33,7 +33,7 @@ const Author = () => {
                             </article>
                         );
                     })}
-                </div>
+                </div> */}
             </div>
         </section>
     )

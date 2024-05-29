@@ -16,9 +16,9 @@ const axiosClient = axios.create({
 
 const getAuthor = () => axiosClient.get('/authors?populate=*');
 
-const getGallery = () => axiosClient.get('/index-gallerys?populate=*');
+const getGallery = () => axiosClient.get('/index-gallerys?filters[author][$eqi]=&populate=*');
 
-const getSingleAuthor = (id) => axiosClient.get('/authors?filters[author][$eqi][populate][0]=' + id + 'Image=&populate=*');
+const getSingleAuthor = (id) => axiosClient.get('/authors?filters[author][$eqi]='+ id +'&populate=*');
 
 export default{
     getAuthor,
