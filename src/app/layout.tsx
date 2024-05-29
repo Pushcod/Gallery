@@ -9,7 +9,10 @@ const inta = Italiana({
   variable:"--font-italiana"
 });
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, }: Readonly<{
+  children: React.ReactNode;
+}>) {
+  
   return (
     <html lang="ru">
       <body className={inta.className + ' w-full bg-[#1A1A1A] text-base'}>

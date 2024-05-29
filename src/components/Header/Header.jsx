@@ -2,8 +2,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
-import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
+// import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+// import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
 
 const menuLinks = [
     { label: 'Gallery', url: '/galleries' },
@@ -14,10 +14,10 @@ const menuLinks = [
 
 const Header = () => {
 
-    const { user } = useKindeBrowserClient();
-    useEffect(() => {
-      console.log(user)
-    }, [user])
+    // const { user } = useKindeBrowserClient();
+    // useEffect(() => {
+    //   console.log(user)
+    // }, [user])
 
     return (
         <header className='w-full py-4'>
@@ -32,8 +32,6 @@ const Header = () => {
                                 </li>
                                 
                                 </>
-                                
-
                             )
                         }
                         )}

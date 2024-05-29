@@ -18,9 +18,9 @@ const getAuthor = () => axiosClient.get('/authors?populate=*');
 
 const getGallery = () => axiosClient.get('/index-gallerys?populate=*');
 
-const getSingleAuthor = (id) => axiosClient.get('/authors?filters[author][$eqi]='+id+'&populate[0]=reviews.image&populate[1]=paint&populate[2]=Image');
+const getSingleAuthor = (id) => axiosClient.get('/authors?filters[author][$eqi]='+id+'&populate=*');
 
-const getReview = () => axiosClient.get('/reviews?filters[isActive][$eq]=true&populate[0]=packets.Review');
+const getReview = () => axiosClient.get('/reviews?filters[isActive][$in][$eqi]=true&populate[0]=packets.Review');
 
 export default{
     getAuthor,
