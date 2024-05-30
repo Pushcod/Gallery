@@ -1,12 +1,39 @@
 "use client"
 
 import Image from 'next/image'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import GlobalApi from '../../../../utils/GlobalApi'
 import useSingleAuthor from '@/hooks/useSingleAuthor'
 
 export default function page ({params})  {
 
     const detailAuthor = useSingleAuthor(params.id);
+
+    const [ review, setReview ] = useState();
+    const [ formField, setFormField ] = useState(false);
+
+    useEffect(() => {
+        if ( review  ) {
+            setFormField(true);
+        } else {
+            setFormField(false);
+        }
+    }, [ review ]);
+
+    const saveFields = () => {
+        const data = {
+            data: {
+                review: review,
+                
+            }
+        }
+        GlobalApi.createReview(data).then(resp => {
+            console.log(resp);
+            if ( resp ) {
+                alert('Данные успешно отправлены!');
+            }
+        });
+    }
         
     return (
         <section className='w-full py-10'>
@@ -41,7 +68,16 @@ export default function page ({params})  {
                                 <div className='w-full h-full bg-zinc-800 animate-pulse'></div>
                     } 
                     </div>
-                    
+                    <section className='w-full py-12'>
+      <div className="container mx-auto">
+        <h2 className="section-title text-white">Оставить отзыв</h2>
+        <div className="w-full relative">
+            
+            <textarea  id="review" onChange={(e) => setReview(e.target.value)} cols="30" rows="10" placeholder='Введите описание' className='text-white w-full h-[261px] bg-black rounded-[20px] p-6 overflow-hidden'></textarea>
+            <button className='absolute w-[150px] h-[80px] bg-white text-black rounded-xl right-5 bottom-5' disabled={!formField} onClick={() => saveFields()}>Отправить</button>
+        </div>
+      </div>
+    </section>
                     <div className="w-full overflow-auto h-[300px] ">
                         <ul className="w-full flex flex-col gap-6 ">
                         {detailAuthor?.attributes?.reviews?.data?.map((review, index) => {

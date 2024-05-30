@@ -16,12 +16,15 @@ const axiosClient = axios.create({
 
 const getAuthor = () => axiosClient.get('/authors?populate=*');
 
-const getGallery = () => axiosClient.get('/index-gallerys?filters[author][$eqi]=&populate=*');
+const getGallery = () => axiosClient.get('/index-gallerys?populate=*');
 
 const getSingleAuthor = (id) => axiosClient.get('/authors?filters[author][$eqi]='+ id +'&populate=*');
+
+const createReview = (data) => axiosClient.post('/reviews?filters[author]', data);
 
 export default{
     getAuthor,
     getGallery,
-    getSingleAuthor
+    getSingleAuthor,
+    createReview
 }

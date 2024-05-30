@@ -18,7 +18,7 @@ const Galleries = () => {
                         return (
                             <>
                             <li key={index} className="w-full  ">
-                                <Link href={'/outhor/'+ item.attributes?.author}>
+                                <Link href={''}>
                                     <Image src={process.env.NEXT_PUBLIC_STRAPI_API_URL +item.attributes?.Image?.data.attributes?.url} className='w-full h-[560px] bg-white object-cover' width={1920} height={560}/>
                                 </Link>
                             </li>

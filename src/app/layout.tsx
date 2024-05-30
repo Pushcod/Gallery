@@ -1,7 +1,14 @@
 import { Inter,Italiana } from "next/font/google";
 import Header from "@/components/Header/Header";
+import type { Metadata } from "next";
 import Footer from "@/components/Footer/Footer";
 import "./globals.css";
+
+
+export const metadata: Metadata = {
+  title: "StudentSave",
+  description: "StudentSave - маркетплейс с бесплатными архивами проектов, дизайнов и т.д.",
+};
 
 const inta = Italiana({
   subsets: ["latin"],
@@ -9,7 +16,7 @@ const inta = Italiana({
   variable:"--font-italiana"
 });
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="ru">
       <body className={inta.className + ' w-full bg-[#1A1A1A] text-base'}>
