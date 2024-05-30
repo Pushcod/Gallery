@@ -20,6 +20,7 @@ const Header = () => {
       console.log(user)
     }, [user])
 
+>>>>>>> 3af13ae55dc4fc98e314704aed2d4edfe26f81e1
     return (
         <header className='w-full py-4'>
             <div className="container mx-auto">
@@ -37,6 +38,12 @@ const Header = () => {
                         }
                         )}
                     </menu>
+<<<<<<< HEAD
+                    <div className="flex items-center gap-10">
+                        {/* <Image src={'/assets/img/nobody.png'} className='w-[56px] h-[56px] rounded-full' width={56} height={56} />
+                        <h2 className='text-4xl text-white uppercase'>Nickname</h2> */}
+                        <ul className="flex items-center gap-4">
+=======
                     {/* <div className="flex items-center gap-10">
                         <Image src={'/assets/img/nobody.png'} className='w-[56px] h-[56px] rounded-full' width={56} height={56} />
                         <h2 className='text-4xl text-white uppercase'>Nickname</h2>
