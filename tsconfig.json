@@ -21,6 +21,10 @@
       "@/*": ["./src/*"]
     }
   },
+<<<<<<< HEAD
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/middleware.js"],
+=======
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/middleware.jsx"],
+>>>>>>> 3af13ae55dc4fc98e314704aed2d4edfe26f81e1
   "exclude": ["node_modules"]
 }

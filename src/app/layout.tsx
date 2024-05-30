@@ -16,7 +16,14 @@ const inta = Italiana({
   variable:"--font-italiana"
 });
 
+<<<<<<< HEAD
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
+=======
+export default function RootLayout({ children, }: Readonly<{
+  children: React.ReactNode;
+}>) {
+  
+>>>>>>> 3af13ae55dc4fc98e314704aed2d4edfe26f81e1
   return (
     <html lang="ru">
       <body className={inta.className + ' w-full bg-[#1A1A1A] text-base'}>

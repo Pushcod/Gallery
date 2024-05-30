@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@kinde-oss/kinde-auth-nextjs": "^2.2.13",
+=======
+    "@kinde-oss/kinde-auth-nextjs": "github:kinde-oss/kinde-auth-nextjs",
+>>>>>>> 3af13ae55dc4fc98e314704aed2d4edfe26f81e1
     "axios": "^1.7.2",
     "next": "14.2.3",
     "react": "^18",
