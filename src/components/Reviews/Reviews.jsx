@@ -1,40 +1,52 @@
-import React from 'react'
+"use client";
+import React, { useEffect, useState } from 'react'
 import useReview from '../../hooks/useReviews'
+import useSingleAuthor from '@/hooks/useSingleAuthor';
+import GlobalApi from '@/utils/GlobalApi';
 
 const Reviews = (params) => {
 
-    const review = useReview(params.id)
+    const reviewe = useSingleAuthor(params.id);
 
+
+    const [review, setReview] = useState();
+    const [formField, setFormField] = useState(false);
+
+    useEffect(() => {
+        if (review) {
+            setFormField(true);
+        } else {
+            setFormField(false);
+        }
+    }, [review]);
+
+    const saveFields = () => {
+        const data = {
+            data: {
+                review: review,
+
+            }
+        }
+        GlobalApi.createReview(data).then(resp => {
+            console.log(resp);
+            if (resp) {
+                alert('Данные успешно отправлены!');
+            }
+        });
+    }
     return (
         <section className='w-full py-10'>
             <div className="container mx-auto">
-            <div className="w-full overflow-auto h-[300px] ">
-                        <ul className="w-full flex flex-col gap-6 ">
-                        {review?.attributes?.reviews.map((review, index) => {
-                    return (
-                            <li key={index} className="w-full h-[261px] bg-black rounded-[20px] p-6 overflow-hidden flex items-center">
-                                <div className="w-full flex items-center gap-7">
-                                    <Image src={''} className='w-[137px] h-[137px] ' width={137} height={137}/>
-                                    {/* {detailAuthor?.attributes?.reviews?.data?.attributes?.
-                    
-                    <p className="w-[1100px] h-[540px] break-words text-white text-[35px]">{detailAuthor?.attributes?.Description}</p>
-                    :
-                    <div className='w-full h-full bg-zinc-800 animate-pulse'></div>
-                } */}
-                                    
-                                        
-                                    <p className="w-full break-words h-full text-white">{review.Review}</p>
-                                     
-                                </div>
-                                <div className="w-full flex flex-col justify-end gap-3">
-                                        
-                                     <span className="w-full text-zinc-700">Дата</span>
-                                 </div>
-                             </li>
-                    )})}
-
-                         </ul>
+                <section className='w-full py-12'>
+                    <div className="container mx-auto">
+                        <h2 className="section-title text-white">Оставить отзыв</h2>
+                        <div className="w-full relative">
+                            <textarea id="review" onChange={(e) => setReview(e.target.value)} cols="30" rows="10" placeholder='Введите описание' className='text-white w-full h-[261px] bg-black rounded-[20px] p-6 overflow-hidden'></textarea>
+                            <button className='absolute w-[150px] h-[80px] bg-white text-black rounded-xl right-5 bottom-5' disabled={!formField} onClick={() => saveFields()}>Отправить</button>
+                        </div>
                     </div>
+                </section>
+                
             </div>
         </section>
     )
