@@ -890,7 +890,7 @@ export interface ApiPaintingPainting extends Schema.CollectionType {
       'oneToMany',
       'api::review.review'
     >;
-    Image: Attribute.Media;
+    paint: Attribute.Media;
     avtor: Attribute.Relation<
       'api::painting.painting',
       'oneToOne',
